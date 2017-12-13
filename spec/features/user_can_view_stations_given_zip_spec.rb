@@ -8,7 +8,7 @@ describe "User searches a zip code" do
     click_button "Locate"
     expect(current_path).to eq('/search')
     url = URI.parse(current_url).to_s
-    expect(url).to include('80203')
+    expect(url).to include('zipcode=80203')
     expect(page).to have_content('10 Results')
     within(".stations") do
       expect(page).to have_selector(".station", count: 10)
