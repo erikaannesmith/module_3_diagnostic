@@ -8,7 +8,7 @@ class NrelService
   end
 
   def all_by_zip(zipcode)
-    get_json("/api/alt-fuel-stations/v1/nearest.json?location=#{zipcode[:zip_code]}&radius=6&fuel_type=ELEC,LPG")
+    get_json("/api/alt-fuel-stations/v1/nearest.json?location=#{zipcode}&radius=6&fuel_type=ELEC,LPG")
   end
 
   private
