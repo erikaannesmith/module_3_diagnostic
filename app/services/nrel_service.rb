@@ -2,7 +2,7 @@ class NrelService
 
   def initialize
     @conn = Faraday.new(url: "https://developer.nrel.gov") do |faraday|
-      faraday.headers["X-API-KEY"] = "BmEoGTxrar0Fc82jBh5uC5ZKTnTdzeEI2MjqyNlL"
+      faraday.headers["X-API-KEY"] = ENV["NREL_API_KEY"]
       faraday.adapter Faraday.default_adapter
     end
   end
