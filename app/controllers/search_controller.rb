@@ -3,6 +3,11 @@ class SearchController < ApplicationController
   def index
     # byebug
     @stations = Station.where(zip_code: params[:q])
+    @conn = Faraday.new(url: "https://developer.nrel.gov/api/alt-fuel-stations/v1/nearest.json?location=80203&radius=6&fuel_type=ELEC,LPG") do |faraday|
+      faraday.headers["X-API-KEY"] = "BmEoGTxrar0Fc82jBh5uC5ZKTnTdzeEI2MjqyNlL"
+      faraday.adapter Faraday.default_adapter
+    end
+
 
   end
 
