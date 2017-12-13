@@ -1,7 +1,7 @@
 <%= @stations.count %> Results
 
 <div class="stations">
-  <%= @stations.each do |station| %>
+  <% @stations.each do |station| %>
     <ul class="station">
       <li class="name">Name: <%= station.name %></li>
       <li class="address">Address: <%= station.address %></li>
